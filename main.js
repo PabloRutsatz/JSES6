@@ -1,11 +1,24 @@
-alert('teste');
-
-class teste {
-    metodo(){
-
+class Matematica{
+    static soma(a, b) {
+        return a + b;
     }
-    outro(){
-        
+}
+
+console.log(Matematica.soma(1, 2));
+
+class TodoList {
+    constructor() {
+        this.todos = [];
     }
 
+    addTodo() {
+        this.todos.push('Novo ToDo.');
+        console.log(this.todos);
+    }
+}
+
+const MinhaLista = new TodoList();
+
+document.getElementById('novotodo').onclick = function () {
+    MinhaLista.addTodo();
 }
