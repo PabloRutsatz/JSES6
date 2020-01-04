@@ -1,24 +1,10 @@
-class Matematica{
-    static soma(a, b) {
-        return a + b;
+function teste(x) {
+    let y = 2;
+
+    if (x > 5) {
+        let y = 4;
+        console.log(x, y);
     }
 }
 
-console.log(Matematica.soma(1, 2));
-
-class TodoList {
-    constructor() {
-        this.todos = [];
-    }
-
-    addTodo() {
-        this.todos.push('Novo ToDo.');
-        console.log(this.todos);
-    }
-}
-
-const MinhaLista = new TodoList();
-
-document.getElementById('novotodo').onclick = function () {
-    MinhaLista.addTodo();
-}
+teste(10);
