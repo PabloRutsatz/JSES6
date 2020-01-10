@@ -1,20 +1,45 @@
-const usuario = {
-    nome: 'Pablo',
-    idade: 26,
-    endereco: {
-        cidade: 'Indaial',
-        estado: 'SC',
-    },
-};
+//REST
 
-//const { nome, idade, endereco: { cidade } } = usuario;
+//const usuario = {
+//    nome: 'Pablo',
+//    idade: 26,
+//    empresa: 'WK Sistemas'
+//};
+//
+//const { nome, ...resto } = usuario;
 //
 //console.log(nome);
-//console.log(idade);
-//console.log(cidade);
+//console.log(resto);
 
-function mostraNome({ nome, idade }) {
-    console.log(nome, idade);
+//const arr = [1, 2, 3, 4];
+//
+//const [a, b, ...c] = arr;
+//
+//console.log(a);
+//console.log(b);
+//console.log(c);
+
+function soma(...params) {
+    return params.reduce((total, next) => total + next);
 }
 
-mostraNome(usuario);
+console.log(soma(1, 2, 3));
+
+//SPREAD
+
+//const arr1 = [1, 2, 3];
+//const arr2 = [4, 5, 6];
+//
+//const arr3 = [...arr1, ...arr2];
+//
+//console.log(arr3);
+
+const usuario1 = {
+    nome: 'Pablo',
+    idade: 26,
+    empresa: 'WK Sistemas',
+};
+
+const usuario2 = { ...usuario1, nome: 'Adriel' };
+
+console.log(usuario2);
