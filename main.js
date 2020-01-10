@@ -1,23 +1,30 @@
-class Usuario {
-    constructor(email, senha) {
-        this.email = email;
-        this.senha = senha;
-        this.admin = false;    
-    }
+const usuarios = [
+    { nome: 'Diego', idade: 23, empresa: 'Rocketseat' },
+    { nome: 'Gabriel', idade: 15, empresa: 'Rocketseat' },
+    { nome: 'Lucas', idade: 30, empresa: 'Facebook' },
+];
 
-    isAdmin() {
-        return this.admin;
-    }
-};
+const map = usuarios.map(({ idade }) => idade);
 
-class Admin extends Usuario{
-    constructor() {
-        super();
-        this.admin = true;
-    }
-};
+console.log(map);
 
-const User1 = new Usuario('email@teste.com', 'senha123');
-const Adm1 = new Admin('email@teste.com', 'senha123');
-console.log(User1.isAdmin()) // false
-console.log(Adm1.isAdmin()) // true
+const filter = usuarios.filter(({ empresa, idade }) => empresa == 'Rocketseat' && idade > 18);
+
+console.log(filter);
+
+const find = usuarios.find(({ empresa }) => empresa == 'Google');
+
+console.log(find);
+
+//unindo operações
+
+const newarr = usuarios.map(function (item) {
+    item.idade = item.idade * 2;
+    return item;
+});
+
+console.log(newarr);
+
+const newfilter = newarr.filter(({ idade }) => idade < 51);
+
+console.log(newfilter);
